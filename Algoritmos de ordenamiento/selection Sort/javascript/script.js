@@ -3,7 +3,7 @@ function selectionSort(arr) {
     for (let i = 0; i < n -1 ; i++) {
         let min_index = i;
 
-        for (let j = 0; j < n; j++) {
+        for (let j = i; j < n; j++) {
             if (arr[j] < arr[min_index]) {
                 min_index = j;
             }
