@@ -1,3 +1,5 @@
+const listaDesordenada = document.getElementById("array-list");
+const listaOrdenada = document.getElementById("array-list-arden");
 
 //creamos la funcion de ordenamiento burbuja qyue recibe un arreglo y su tamaño
 function ordenamientoBurbuja(arr, n) {
@@ -33,9 +35,27 @@ function ordenamientoBurbuja(arr, n) {
 
 
 
-var arr = [200,64, 34, 25, 12, 22, 11, 90];
-console.log(arr);
+var arr = [200, 64, 34, 25, 12, 22, 11, 90];
+
+// Mostrar array original con animación escalonada
+arr.forEach((element, index) => {
+    const li = document.createElement('li');
+    li.textContent = element;
+    li.style.animationDelay = `${index * 0.1}s`;
+    listaDesordenada.appendChild(li);
+});
+
+console.log("Array original:", arr);
+
 var n = arr.length;
 ordenamientoBurbuja(arr, n);
-console.log("array Ordenado: ");
-console.log(arr);
+
+console.log("Array ordenado:", arr);
+
+// Mostrar array ordenado con animación escalonada
+arr.forEach((element, index) => {
+    const li = document.createElement('li');
+    li.textContent = element;
+    li.style.animationDelay = `${index * 0.1}s`;
+    listaOrdenada.appendChild(li);
+});

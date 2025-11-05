@@ -1,3 +1,6 @@
+const listaDesordenada = document.getElementById("array-list");
+const listaOrdenada = document.getElementById("array-list-arden");
+
 function selectionSort(arr) {
     let n = arr.length;
     for (let i = 0; i < n -1 ; i++) {
@@ -20,10 +23,26 @@ function selectionSort(arr) {
 
 const arr = [64, 25, 12, 22, 11];
 
-console.log("Original array: ");
-console.log(arr);
+// Mostrar array original con animación escalonada
+arr.forEach((element, index) => {
+    const li = document.createElement('li');
+    li.textContent = element;
+    li.style.animationDelay = `${index * 0.1}s`;
+    listaDesordenada.appendChild(li);
+});
+
+console.log("Array original:", arr);
 
 selectionSort(arr);
 
-console.log("Sorted array: ");
-console.log(arr);
+console.log("Array ordenado:", arr);
+
+// Mostrar array ordenado con animación escalonada
+arr.forEach((element, index) => {
+    const li = document.createElement('li');
+    li.textContent = element;
+    li.style.animationDelay = `${index * 0.1}s`;
+    listaOrdenada.appendChild(li);
+});
+
+

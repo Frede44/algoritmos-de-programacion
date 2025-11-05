@@ -1,11 +1,197 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Selection Sort - Algoritmo de Ordenamiento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #183df5 0%, #270788 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 900px;
+            width: 100%;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #f5576c;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #f5576c;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon {
+            font-size: 1.5em;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            min-height: 80px;
+        }
+
+        li {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.2em;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        li:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(245, 87, 108, 0.6);
+        }
+
+        .unsorted li {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            animation: slideIn 0.5s ease-out backwards;
+        }
+
+        .sorted li {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            box-shadow: 0 4px 15px rgba(67, 233, 123, 0.4);
+            animation: slideIn 0.5s ease-out backwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .info-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .info-box h3 {
+            color: #f57c00;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            li {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>🎯 Selection Sort</h1>
+        <p class="subtitle">Algoritmo de Ordenamiento por Selección</p>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">📊</span>
+                Lista Original (Desordenada)
+            </h2>
+            <ul id="array-list" class="unsorted"></ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">
+                <span class="icon">✅</span>
+                Lista Ordenada
+            </h2>
+            <ul id="array-list-arden" class="sorted"></ul>
+        </div>
+
+        <div class="info-box">
+            <h3>💡 ¿Cómo funciona Selection Sort?</h3>
+            <p>
+                El algoritmo de ordenamiento por selección divide la lista en dos partes: ordenada y desordenada. 
+                En cada iteración, selecciona el elemento más pequeño de la parte desordenada y lo coloca al 
+                final de la parte ordenada. Este proceso se repite hasta que toda la lista está ordenada.
+            </p>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
