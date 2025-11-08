@@ -1,0 +1,149 @@
+/* Estilo general */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at center, #0a0f24, #000);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Pantalla de inicio */
+.inicio {
+    text-align: center;
+    background: rgba(15, 20, 40, 0.9);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+    animation: fadeIn 1s ease;
+}
+
+.inicio h1 {
+    font-size: 2rem;
+    color: #00ffff;
+    margin-bottom: 25px;
+}
+
+.inicio input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    width: 80%;
+}
+
+.inicio button {
+    background: linear-gradient(90deg, #00b4d8, #0077b6);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.inicio button:hover {
+    background: linear-gradient(90deg, #48cae4, #0096c7);
+    transform: scale(1.05);
+}
+
+/* Contenedor principal del juego */
+.container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+}
+
+.gameArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Título del juego */
+.container h1 {
+    font-size: 2rem;
+    color: #00ffff;
+    text-shadow: 0 0 15px #00ffff;
+}
+
+/* Marcadores */
+.scoreBoard {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.scoreBoard h2 span {
+    color: #00ff88;
+}
+
+/* Canvas */
+canvas {
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    background: #000;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Lista de mejores puntajes */
+.puntajes {
+    margin-top: 30px;
+    background: rgba(0, 50, 50, 0.3);
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    width: 300px;
+}
+
+.puntajes h2 {
+    margin-bottom: 15px;
+    color: #00ffff;
+}
+
+#highScoresList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#highScoresList li {
+    margin: 8px 0;
+    background: rgba(0, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#highScoresList li:hover {
+    background: rgba(0, 255, 255, 0.25);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

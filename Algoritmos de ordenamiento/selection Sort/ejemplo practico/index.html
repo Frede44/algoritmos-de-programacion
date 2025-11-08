@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="inicio" id="inicio">
+        <h1>Bienvenido al juego Snake</h1>
+        <input type="text" id="username" placeholder="Ingresa tu nombre">
+        <button id="startButton">Iniciar Juego</button>
+    </div>
+
+
+    <div class="container " id="container">
+        <h1>juego Snake</h1>
+        <div class="scoreBoard">
+            <h2>Puntaje: <span id="score">0</span></h2>
+            <h2>Nivel: <span id="level">1</span></h2>
+        </div>
+
+        <div class="gameArea">
+
+             <canvas class="canvas">
+
+        </canvas>
+
+        <div class="puntajes">
+            <h2>Mejores Jugadores</h2>
+            <ul id="highScoresList">
+                <!-- Aquí se agregarán los mejores puntajes -->
+            </ul>
+        </div>
+
+        </div>
+
+       
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
